@@ -1,0 +1,131 @@
+/* Resets */
+
+/*  Variables - Branding */
+:root {
+  --primary-color: #cc0000;
+  --secondary-color: #a0a0a0;
+  --black: #000000;
+  --white: #ffffff;
+  --fsize: 1rem;
+  --ffamily: 'Open Sans', sans-serif;
+}
+
+
+/* resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, img, div, section, ul, ol, li {
+  font-weight: normal;
+}
+
+/* Helpers */
+.text-right {
+  text-align: right !important; }
+.text-left {
+  text-align: left !important; }
+.text-center {
+  text-align: center !important; }
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
+}
+.pt-0 {
+  padding-top: 0 !important;
+}
+.ml20n {
+  margin-left: -20px !important;
+}
+.mr20n {
+  margin-right: -20px !important;
+}
+.mr10n {
+  margin-right: -10px !important;
+}
+.ml10n {
+  margin-left: -10px !important;
+}
+.text-black {
+  color: var(--black) !important;
+}
+.w100 {
+  width: 100%;
+}
+.safezone {
+  padding: 10px;
+}
+
+
+/* Custom Styles */
+
+h1 {
+  margin-left: 20px;
+}
+
+body {
+  background: #eee url("../images/page-background.png") top left repeat;
+  font-family: var(--ffamily);
+  font-size: var(--fsize);
+}
+
+
+#wrapper {
+  width:960px;
+  margin: 0 auto;
+}
+.header {
+  background-color: var(--black);
+  border-bottom: 10px solid #c00;
+  display: flex;
+  justify-content: space-between;
+}
+.header .gnav {
+  align-self: center;
+}
+.gnav ul { 
+  list-style: none; }
+.gnav ul li { 
+  display: inline-block; 
+  border-right: 1px solid #ccc; 
+  padding: 0 10px;
+  color: var(--secondary-color);
+  font-size: 0.8rem; }
+.gnav ul li:last-child { 
+  border: none; 
+  padding-right: 20px; }  
+.gnav li a {     
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.7rem; }
+.gnav li a:hover {
+  color: var(--primary-color);
+} 
+
+
+.page-title {
+  font-size: 1.4rem;
+  font-size: 1.2rem;
+    font-weight: 500;
+    padding-bottom:0.5rem;
+    border-bottom: 1px dotted var(--secondary-color); 
+}
+
+.iwrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.iwrapper .item {
+  border: 1px solid red;
+}
+
+.form {
+  
+}
+.form-item {
+  border: 1px solid blue;
+}
