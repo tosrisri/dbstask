@@ -6,7 +6,6 @@
   --secondary-color: #a0a0a0;
   --black: #000000;
   --white: #ffffff;
-  --fsize: 1rem;
   --ffamily: 'Open Sans', sans-serif;
 }
 
@@ -73,7 +72,7 @@ h1 {
 body {
   background: #eee url("../images/page-background.png") top left repeat;
   font-family: var(--ffamily);
-  font-size: var(--fsize);
+  font-size: 1rem;
 }
 
 
@@ -145,7 +144,15 @@ input, select, textarea {
   padding: 3px 2px;
   margin: 0;
 }
-
+input[type="button"] {
+    color: var(--white);
+    font-size: 0.8rem;
+    cursor: pointer;
+    padding: 3px 10px;
+    text-align: center;
+    background-color: var(--primary-color);
+    border: 1px outset var(--primary-color);
+}
 
 
 .form {
@@ -153,6 +160,9 @@ input, select, textarea {
   flex-direction: row;
   flex-wrap: wrap;
   font-size: 0.8rem;
+}
+.travel-plans fieldset {
+  width: 45%;
 }
 fieldset {
   border: 1px dotted #ccc;
@@ -178,14 +188,26 @@ fieldset legend {
   font-size: 0.7rem;
 }
 
+
+
 .pre-cont {
   font-size: 0.8rem;
+  padding: 10px;
 }
 .pre-cont ul {
   list-style: none;
 }
 .pre-cont ul li {
-  display: inline;
+  display: inline-block;
+  background-color: #eee;
+  margin: 0 1rem 1rem 0;
+  padding: 5px  0.5rem;
+  text-align: center;
+  color: var(--primary-color);
+}
+.pre-cont ul li span {
+  display: block;
+  color: var(--black);
 }
 
 
@@ -193,14 +215,36 @@ fieldset legend {
   font-weight: 0.8rem;
 }
 
-.fxc-cont  .item-1 ul {
+ .item-1 ul, .form-fields {
  list-style: none;
 }
-.fxc-cont .item-1 ul li {
+ .item-1 ul li, .form-fields li {
   display: inline-block;
   border:0px solid red;
 }
 
-.fxc-cont ul li label {
+.item-1 ul li label, .form-fields li label {
   display: block;
+}
+
+
+.footer {
+  border-top: 1px dotted #999;
+  padding: 10px 0;
+}
+.footer ul {
+  list-style: none;
+}
+.footer ul li {
+  display: inline-block;
+  border-right: 1px solid #999;
+  padding: 0 1rem;
+  font-size: 0.7rem;
+}
+.footer ul li a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.footer ul li a:hover {
+  color: var(--black);
 }

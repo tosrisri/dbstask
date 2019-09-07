@@ -46,78 +46,130 @@
                 <form class='form' action="" method="post">
                     <fieldset>
                         <legend>Travel Countries</legend>
-                        <div class="form-item">
-                            <label for="scountry" id="scountry"><span>Source Country:</span></label>
-                            <input name="scountry" id="baseCurrency" placeholder="eg. India" required="required"
-                                type="text" />
-                        </div>
-                        <div class="form-item">
-                            <label for="dcountry" id="dcountry"><span>Destination Country:</span></label>
-                            <input name="dcountry" id="exchangeCurrency" placeholder="eg. USA" required="required"
-                                type="text" />
-                        </div>
-                    </fieldset>
+                        <ul class="form-fields">
+                            <li><label for="scountry" id="scountry"><span>Source Country:</span></label>
+                                <input name="scountry" id="baseCurrency" placeholder="eg. India" required="required"
+                                    type="text" /></li>
 
+                            <li><label for="dcountry" id="dcountry"><span>Destination Country:</span></label>
+                                <input name="dcountry" id="exchangeCurrency" placeholder="eg. USA" required="required"
+                                    type="text" /></li>
+                        </ul>
+                    </fieldset>
                     <fieldset>
                         <legend>Travel Dates</legend>
-                        <div class="form-item">
-                            <label for="fdate" id="fdate"><span>From Date:</span></label>
-                            <input name="fdate" id="fromDate" required="required" />
-                        </div>
-                        <div class="form-item">
-                            <label for="tdate" id="tdate"><span>To Date:</span></label>
-                            <input name="fdate" id="toDate" required="required" />
-                        </div>
+                        <ul class="form-fields">
+                            <li><label for="fdate" id="fdate"><span>From Date:</span></label>
+                                <input name="fdate" id="fromDate" required="required" /></li>
+                            <li>
+                                <label for="tdate" id="tdate"><span>To Date:</span></label>
+                                <input name="fdate" id="toDate" required="required" />
+                            </li>
+                        </ul>
                     </fieldset>
-                    <div class="form-item w100 btn-cont">
-                        <button id="send" type="submit">Submit</button>
-                        <button id="reset" type="reset">Reset</button>
+                    <div class="w100 btn-cont">
+                        <input id="send" type="button" value="Submit"/>
+                        <input id="reset" type="button" value="Rese"/>
                     </div>
                 </form>
                 <div class="pre-cont">
                     <h3>Predicted FX rates from 5th Oct to 15th Oct</h3>
-                    <img src="images/linegraph.webp" alt="Graph" width="100%" />
+                    <ul class="predictions">
+                            <li><span>5th Oct</span>72</li>
+                            <li><span>6th Oct</span>70</li>
+                            <li><span>7th Oct</span>69</li>
+                            <li><span>2019-10-08</span>68</li>
+                            <li><span>2019-10-09</span>70</li>
+                            <li><span>2019-10-10</span>71</li>
+                            <li><span>2019-10-11</span>66</li>
+                        </ul>
+                    <img src="images/linegraph.webp" alt="Graph" width="800" />
                 </div>
             </div>
             <!-- /travel-plans -->
             <!-- fxc -->
             <div class="item fxc-cont">
-                <section>
-                    <h3>FX Configurator</h3>
-                    <div class="item-1">
-                        <ul><li><label for="dcountry"><span>Country 1:</span></label>
-                            <input name="dcountry"  placeholder="eg. USA" required="required" type="text" /></li>
+                <h3>FX Configurator</h3>
+                <div class="item-1">
+                    <ul>
+                        <li><label for="dcountry"><span>Country 1:</span></label>
+                            <input name="dcountry" placeholder="eg. USA" required="required" type="text" /></li>
                         <li><label for="dcountry"><span>Country 2:</span></label>
-                            <input name="dcountry"  placeholder="eg. USA" required="required" type="text" /></li>
-                            <li><label for="checkbox1">Notify</label><input type="checkbox" id="checkbox1" checked /></li>
-                            <li><a href="#" title="Add Item"><img src="images/icon-add.png" alt="Add"></a></li>
-                            <li><a href="#" title="Remove Item"><img src="images/icon-remove.png" alt="Remove"></a></li>
-                        </ul>
-                        <ul><li><label for="dcountry"><span>Country 1:</span></label>
-                            <input name="dcountry"  placeholder="eg. USA" required="required" type="text" /></li>
+                            <input name="dcountry" placeholder="eg. USA" required="required" type="text" /></li>
+                        <li><label for="checkbox1">Notify</label><input type="checkbox" id="checkbox1" checked /></li>
+                        <li><a href="#" title="Add Item"><img src="images/icon-add.png" alt="Add"></a></li>
+                        <li><a href="#" title="Remove Item"><img src="images/icon-remove.png" alt="Remove"></a></li>
+                    </ul>
+                    <ul>
+                        <li><label for="dcountry"><span>Country 1:</span></label>
+                            <input name="dcountry" placeholder="eg. USA" required="required" type="text" /></li>
                         <li><label for="dcountry"><span>Country 2:</span></label>
-                            <input name="dcountry"  placeholder="eg. USA" required="required" type="text" /></li>
-                            <li><label for="checkbox1">Notify</label><input type="checkbox" id="checkbox1" checked /></li>
-                            <li><a href="#" title="Add Item"><img src="images/icon-add.png" alt="Add"></a></li>
-                            <li><a href="#" title="Remove Item"><img src="images/icon-remove.png" alt="Remove"></a></li>
-                        </ul>
-                        <div class="btn-cont">
-                                <button id="save" type="submit">Save</button>
-                                <button id="reset" type="reset">Reset</button>
-                            </div>
-                    </div>                   
-                </section>
+                            <input name="dcountry" placeholder="eg. USA" required="required" type="text" /></li>
+                        <li><label for="checkbox1">Notify</label><input type="checkbox" id="checkbox1" checked /></li>
+                        <li><a href="#" title="Add Item"><img src="images/icon-add.png" alt="Add"></a></li>
+                        <li><a href="#" title="Remove Item"><img src="images/icon-remove.png" alt="Remove"></a></li>
+                    </ul>
+                    <div class="btn-cont">
+                        <input id="save" type="button" value="Save" />
+                        <input id="reset" type="button" value="Reset"/>
+                    </div>
+                </div>
             </div>
             <!-- /fxc -->
 
             <!-- calc-cont -->
-            <div class="calc-cont">
-                
-            </div>
-             <!-- /calc-cont -->
-        </div>
+            <div class="item calc-cont">
+                <h3>FX, Balance Calculator</h3>
+                <div class="item-1">
+                    <fieldset>
+                        <legend>Calculate FX</legend>
+                        <p>Enter either of the Currencies to show the exchange value of other</p>
+                        <ul>
+                            <li><label for="scurrency"><span>Currency 1:</span></label>
+                                <input name="scurrency" placeholder="eg. 1000" required="required" type="number" /></li>
+                            <li>
+                                <p>=</p>
+                            </li>
+                            <li><label for="dcurrency"><span>Currency 2:</span></label>
+                                <input name="dcurrency" placeholder="eg. 1000" required="required" type="number" /></li>
+                        </ul>
 
+                    </fieldset>
+                    <fieldset>
+                        <legend>Balance Calculated FX</legend>
+                        <p>Your Account balance: Rs.1,00,000</p>
+                        <p>Your FX rates for next 5 days</p>
+                        <ul>
+                            <li><span>5th Oct</span>72</li>
+                            <li><span>6th Oct</span>70</li>
+                            <li><span>7th Oct</span>69</li>
+                            <li><span>2019-10-08</span>68</li>
+                            <li><span>2019-10-09</span>70</li>
+                            <li><span>2019-10-10</span>71</li>
+                            <li><span>2019-10-11</span>66</li>
+                        </ul>
+                    </fieldset>
+
+                </div>
+            </div>
+            <!-- /calc-cont -->
+        </div>
+        <!-- footer -->
+        <footer>
+            <div id="footer" class="footer">
+                <div class="item">
+                    <ul>
+                        <li><a href="http://www.dbs.com/in/personal/terms-and-conditions.page" target="_self">Terms
+                                &amp; Conditions</a></li>
+                        <li><a href="http://www.dbs.com/india/privacy.page" target="_self">Privacy Policy</a></li>
+                        <li>&copy; 2019 DBS Bank India Limited</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- /footer -->
     </div>
+    <!-- /wrapper -->
 
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
