@@ -200,22 +200,23 @@ fieldset legend {
 .pre-cont ul {
   list-style: none;
 }
-.pre-cont ul li {
+.pre-cont ul li, .fxrates li {
   display: inline-block;
   background-color: #eee;
   margin: 0 1rem 1rem 0;
-  padding: 5px  0.5rem;
+  padding: 0.5rem;
   text-align: center;
   color: var(--primary-color);
-  vertical-align: text-top;
+  vertical-align: middle;
   border-radius: 3px;
+  min-width: 100px;
 }
 .pre-cont ul li.active {
   background-color: #fffeb3;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     border: 1px solid greenyellow;
 }
-.pre-cont ul li span {
+.pre-cont ul li span, .fxrates li span {
   display: block;
   color: var(--black);
 }
@@ -232,6 +233,10 @@ fieldset legend {
 
 .calc-cont ul {
   margin: 10px 0;
+}
+.calc-cont fieldset:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
  .item-1 ul, .form-fields {
  list-style: none;
@@ -310,12 +315,23 @@ fieldset legend {
 
 /* results */
 .results {
-  display: flex;
-  flex-wrap: wrap;
+  text-align: center;
 }
-.results .items {
-  border: 1px  solid red;
+.results li {
+  display: inline-block;
+  border: 1px solid;
+  min-width: 100px;
+  margin-right: 5px;
+  text-align: left;
 }
-.results-col-headings {
 
+.calc-cont {
+  font-size: 0.8rem;
 }
+.fxrates {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
