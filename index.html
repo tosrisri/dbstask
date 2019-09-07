@@ -44,7 +44,7 @@
                 <h3>Itinerary</h3>
                 <form class='form' action="" method="post">
                     <fieldset>
-                        <legend>Travel Countries</legend>
+                        <legend>Travel Country</legend>
                         <ul class="form-fields">
                             <li><label for="scountry" id="scountry"><span>Source Country:</span></label>
                                 <input name="scountry" id="baseCurrency" placeholder="eg. India" type="text" />
@@ -99,17 +99,20 @@
                         <fieldset>
                             <legend>Notify Setting</legend>
                             <ul>
-                                <li><label for="dcountry"><span>Source Country:</span></label>
-                                    <input name="dcountry" value="India" disabled type="text" />
+                                <li><label for="scountry"><span>Source Country:</span></label>
+                                    <input name="scountry" type="text" id="alertBaseCurrency" placeholder="eg.India"/>
                                     <span class="error-msg">Country cannot be same</span></li>
-                                <li><label for="dcountry"><span>Country 2:</span></label>
-                                    <input name="dcountry" placeholder="eg. USA" type="text" />
+                                <li><label for="dcountry"><span>Destination Country</span></label>
+                                    <input name="dcountry" placeholder="eg. USA" type="text" id="alertDestCurrency"/>
                                     <span class="error-msg">Country cannot be same</span>
                                 </li>
-                                <li><label for="trate"><span>Desired Target Rate:</span></label>
-                                    <input name="trate" placeholder="enter target rate" type="number" />
+                                <li><label for="drate"><span>Desired Target Rate:</span></label>
+                                    <input name="drate" placeholder="enter target rate" type="number" id="drate"/>
                                     <span class="error-msg">Country cannot be same</span></li>
-                                <li><input id="submit1" type="button" value="Notify" /></li>
+                                <li><label for="tDate"><span>Travel Date</span></label>
+                                    <input name="tDate" placeholder="YYYY-MM-DD" type="text" id="travelDate"/>
+                                    <span class="error-msg">Country cannot be same</span></li>
+                                <li><input id="notify" type="button" value="Notify" /></li>
                             </ul>
                         </fieldset>
                     </form>
@@ -156,22 +159,22 @@
                             <p>Enter the FX required</p>
                             <ul>
                                 <li><label for="dcountry"><span>Source Country:</span></label>
-                                    <input name="scountry" id="baseCurrency" placeholder="eg. India" type="text" />
+                                    <input name="scountry" id="baseCurrency1" placeholder="eg. India" type="text" />
                                     <span class="error-msg">Country cannot be same</span></li>
                                 <li><a href="#" title="Reverse"><img src="images/exchange-arrows.svg" width="24"
                                             height="24" alt="reverse"></a></li>
                                 <li><label for="dcountry"><span>Destination Country:</span></label>
-                                    <input name="scountry" id="exchangeCurrency" placeholder="eg. India" type="text" />
+                                    <input name="scountry" id="exchangeCurrency1" placeholder="eg. India" type="text" />
                                     <span class="error-msg">Country cannot be same</span>
                                 </li>
                                 <li><label for="trate"><span>Amount:</span></label>
-                                    <input name="trate" placeholder="enter target rate" type="number" />
+                                    <input name="trate" placeholder="enter target amount" type="number" id="trate"/>
                                     <span class="error-msg">Country cannot be same</span></li>
-                                <li><input id="submit1" type="button" value="Calculate" /></li>
+                                <li><input id="calculate" type="button" value="Calculate" /></li>
                             </ul>
                             <div class="fxresult">
-                                <p>1 USD =</p>
-                                <p>71.6615 <span>INR</span></p>
+                                <p><span id='convertedFrom'>1 USD =</span></p>
+                                <p><span id='convertedTo'>INR</span></p>
                             </div>
                         </fieldset>
 
@@ -214,7 +217,8 @@
     <script src="js/jquery-ui.js"></script>
     <script src="js/select2.js"></script>
     <script src="js/main.js"></script>
-
+	<script src="js/calculator.js"></script>
+	<script src="js/notify.js"></script>
 </body>
 
 </html>

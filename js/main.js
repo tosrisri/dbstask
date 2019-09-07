@@ -1,26 +1,7 @@
 var countries;
 var locationUrl = "http://192.168.43.53:8080";
+
 $(document).ready(function() {
-	$("#baseCurrency").select2({
-		 ajax: { 
-		        url: locationUrl+"/api/v1/rightTimeToFx/getCountriesAndCurrencies",
-		        dataType: 'json',
-		        results: function (data, page) { 
-		            return { results: formatCountriesToSelect2(data.countriesAndCurrencies) };
-		        },
-		        cache: true
-		    }
-	});
-	$("#exchangeCurrency").select2({
-		ajax: { 
-	        url: locationUrl+"/api/v1/rightTimeToFx/getCountriesAndCurrencies",
-	        dataType: 'json',
-	        results: function (data, page) { 
-	            return { results: formatCountriesToSelect2(data.countriesAndCurrencies) };
-	        },
-	        cache: true
-	    }
-	});
 	$("#fromDate").datepicker({
 		minDate : new Date(),
 		maxDate : "+3m",
@@ -35,6 +16,7 @@ $(document).ready(function() {
 		buttonImage: "calendar.gif",
 		buttonText: "Calendar"
 	});
+	getCountries();
 
 	$("#submit").on('click', function() {
 		if(validateForm()) {
@@ -42,7 +24,8 @@ $(document).ready(function() {
 			inputObj.fromDate = $("#fromDate").val();
 			inputObj.toDate = $("#toDate").val();
 			inputObj.baseCurrency = $("#baseCurrency").val();
-			inputObj.exchangeCurreny = $("#exchangeCurreny").val();
+			inputObj.exchangeCurreny = $("#exchangeCurrency").val();
+			console.log(inputObj);
 			getExchangeRates(inputObj);
 		}
 	});
@@ -75,6 +58,7 @@ $(document).ready(function() {
 		$('#exchangeCurrency').prev().removeClass("error-field");
 		$('#exchangeCurrency').parent().find(".error-msg").html(""); 
 	});
+	
 });
 
 function displayError($id, $parentId, msg) {
@@ -140,13 +124,24 @@ function getExchangeRates(inputObj) {
           dataType: 'json',
           contentType: 'application/json',
           success: function (data) {
-        	console.log(data);
         	displayExchangeRates(data.exchangeRates);
           },
           data: JSON.stringify(inputObj)
 		});
-	
 }
+
+function getCountries() {
+	$.ajax({
+		url: locationUrl+"/api/v1/rightTimeToFx/getCountriesAndCurrencies",
+        dataType: 'json'
+	}).done(function(data) {
+		formatCountries = formatCountriesToSelect2(data.countriesAndCurrencies);
+		$("#baseCurrency,#exchangeCurrency,#baseCurrency1,#exchangeCurrency1,#alertBaseCurrency,#alertDestCurrency").select2({
+			 data: formatCountries
+		});
+	});
+}
+
 
 function displayExchangeRates(exchangeRates) {
 	$("#fromSpan").html("from "+$("#fromDate").val());
@@ -167,4 +162,3 @@ function formatCountriesToSelect2(countriesAndCurrencies) {
 	});
 	return formatCountries;
 }
-
