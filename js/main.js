@@ -1,8 +1,9 @@
 var countries;
+var locationUrl = "http://192.168.43.53:8080";
 $(document).ready(function() {
 	$("#baseCurrency").select2({
 		 ajax: { 
-		        url: "http://192.168.43.53:8080/api/v1/rightTimeToFx/getCountriesAndCurrencies",
+		        url: locationUrl+"/api/v1/rightTimeToFx/getCountriesAndCurrencies",
 		        dataType: 'json',
 		        quietMillis: 250,
 		        results: function (data, page) { 
@@ -13,7 +14,7 @@ $(document).ready(function() {
 	});
 	$("#exchangeCurrency").select2({
 		ajax: { 
-	        url: "http://192.168.43.53:8080/api/v1/rightTimeToFx/getCountriesAndCurrencies",
+	        url: locationUrl+"/api/v1/rightTimeToFx/getCountriesAndCurrencies",
 	        dataType: 'json',
 	        quietMillis: 250,
 	        results: function (data, page) { 
@@ -127,8 +128,7 @@ function validateForm() {
 
 function getExchangeRates(inputObj) {
 		$.ajax({
-		  url: "http://192.168.43.53:8080/api/v1/rightTimeToFx/getExchangeRates",
-		 // data:inputObj,
+		  url: locationUrl+"/api/v1/rightTimeToFx/getExchangeRates",
 		  type: 'post',
           dataType: 'json',
           contentType: 'application/json',
