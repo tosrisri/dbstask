@@ -140,28 +140,26 @@
                 <div class="item-1">
                     <form class="form" action="" method="post">
                         <fieldset>
-                            <legend>Calculate FX</legend>
-                            <p>Enter either of the Currencies to show the exchange value of other</p>
+                            <legend>FX Calculator</legend>
+                            <p>Enter the FX required</p>
                             <ul>
-                                <li><label for="scurrency"><span>Source Currency:</span></label>
-                                    <input name="scurrency" placeholder="eg. 1000" type="number" />
-                                    <span class="error-msg">Country cannot be same</span>
+                                <li><label for="scurrency"><span>Desired Currency (USD):</span></label>
+                                    <input name="scurrency" value="1000" type="number" />
+                                    <span class="error-msg">Should be a Number</span>
                                 </li>
                                 <li>
-                                    <p>=</p>
+                                    <p>=&gt; </p>
                                 </li>
-                                <li><label for="dcurrency"><span>Destination Currency:</span></label>
-                                    <input name="dcurrency" placeholder="eg. 1000" type="number" />
+                                <li><label for="dcurrency"><span>Amount required (INR):</span></label>
+                                    <input name="dcurrency"  type="number" value="125488" readonly disabled />
                                     <span class="error-msg">Country cannot be same</span>
                                 </li>
                             </ul>
 
                         </fieldset>
                         <fieldset>
-                            <legend>Balance Calculated FX</legend>
-                            <p>Your Account balance: Rs.1,00,000</p>
-                            <p>Your FX rates for next 5 days</p>
-                            <ul>
+                            <legend>FX rates for next 5 days</legend>
+                            <ul class="predictions">
                                 <li><span>5th Oct</span>72</li>
                                 <li><span>6th Oct</span>70</li>
                                 <li><span>7th Oct</span>69</li>
