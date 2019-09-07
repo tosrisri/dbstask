@@ -21,6 +21,12 @@ h1, h2, h3, h4, h5, h6, img, div, section, ul, ol, li {
   font-weight: normal;
 }
 
+h3 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
 /* Helpers */
 .text-right {
   text-align: right !important; }
@@ -110,11 +116,11 @@ body {
 
 
 .page-title {
-  font-size: 1.4rem;
   font-size: 1.2rem;
-    font-weight: 500;
-    padding-bottom:0.5rem;
-    border-bottom: 1px dotted var(--secondary-color); 
+  font-weight: 500;
+  border-bottom: 1px dotted var(--secondary-color);
+  background-color: white;
+  padding: 10px;
 }
 
 .iwrapper {
@@ -145,13 +151,16 @@ input, select, textarea {
   margin: 0;
 }
 input[type="button"] {
-    color: var(--white);
-    font-size: 0.8rem;
-    cursor: pointer;
-    padding: 3px 10px;
-    text-align: center;
-    background-color: var(--primary-color);
-    border: 1px outset var(--primary-color);
+  color: var(--white);
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.5rem 1.1rem;
+  text-align: center;
+  background-color: var(--primary-color);
+  border: 1px outset var(--primary-color);
+  text-transform: uppercase;
+  margin-right: 1rem;
+  border-radius: 3px;
 }
 
 
@@ -162,17 +171,18 @@ input[type="button"] {
   font-size: 0.8rem;
 }
 .travel-plans fieldset {
-  width: 45%;
+  width: 48%;
 }
 fieldset {
   border: 1px dotted #ccc;
+  padding: 10px 10px 20px;
+  border-radius: 3px;
+}
+.travel-plans fieldset:first-child {
   margin-right: 20px;
-  padding: 10px;
 }
 fieldset legend {
-  margin: 0 10px 0 0px;
-  padding: 10px;
-  font-weight: bold;
+  padding: 0 10px 0 10px;
 }
 .form-item {
   border: 0px solid blue;
@@ -218,15 +228,38 @@ fieldset legend {
  .item-1 ul, .form-fields {
  list-style: none;
 }
- .item-1 ul li, .form-fields li {
+ .item-1 ul li {
   display: inline-block;
   border:0px solid red;
 }
+
 
 .item-1 ul li label, .form-fields li label {
   display: block;
 }
 
+.form-fields li {
+  display: inline-table;
+  border:0px solid red;
+}
+
+.form-fields .select2-container, .form-fields input.inputfield {
+  min-width: 180px;
+  margin-right: 1rem;
+}
+.btn-cont {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px dotted #ccc;
+  margin-bottom: 1rem;
+}
+.form-fields li {
+  width: 47%;
+  padding-left: 10px; 
+}
+.form-fields li:first-child {
+  margin-right: 2%;
+}
 
 .footer {
   border-top: 1px dotted #999;
@@ -247,4 +280,14 @@ fieldset legend {
 }
 .footer ul li a:hover {
   color: var(--black);
+}
+
+
+.error-msg {
+  font-size: 11px;
+  color: red;
+  display: none;
+}
+.error-field {
+  border: 1px solid red;
 }
