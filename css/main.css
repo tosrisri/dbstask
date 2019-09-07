@@ -322,27 +322,29 @@ fieldset legend {
 .results {
   text-align: center;
 }
-.results li {
-  display: inline-block;
-  min-width: 38%;
-  margin-right: 5px;
+.results table {
+  width: 100%;
+}
+.results table th, .results table td {
+  padding: 5px 0;
+}
+.results table th {
+  font-weight: bold;
+  font-size: 1rem;
   text-align: left;
 }
-.results li:last-child {
-  min-width: 10%;
-  text-align: right;
-}
-.results-col-headings li {
-  font-weight: bold;
-  padding: 5px 0;
-  margin-bottom: 5px;
-  border-bottom: 1px solid;
-}
-.results-col-values li {
-  padding-bottom: 3px;
-  margin-bottom: 3px;
+.results table td {
   border-bottom: 1px dotted #ccc;
+  text-align: left;
 }
+.results table td.text-right, .results table th.text-right {
+  text-align: right;
+  padding-right: 1rem; 
+}
+.results table td.text-center, .results table th.text-center {
+  text-align: center;
+}
+
 
 .calc-cont {
   font-size: 0.8rem;

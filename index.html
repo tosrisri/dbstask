@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/select2.css" />
     <link rel="stylesheet" href="css/main.css">
@@ -77,15 +77,15 @@
                     </div>
                 </form>
                 <div class="pre-cont">
-                     <h3>Predicted FX rates<span id="fromSpan"></span><span id="toSpan"></span></h3>
+                    <h3>Predicted FX rates<span id="fromSpan"></span><span id="toSpan"></span></h3>
                     <ul class="predictions">
-                         <li><span>5th Oct</span>72 USD</li>
-                         <li><span>6th Oct</span>70 USD</li>
-                         <li><span>7th Oct</span>69 USD</li>
-                         <li><span>2019-10-08</span>68 USD</li>
-                         <li><span>2019-10-09</span>70 USD</li>
-                         <li><span>2019-10-10</span>71 USD</li>
-                         <li class="active"><span>2019-10-11</span>66 USD<span>1,25,466 INR</span></li>
+                        <li><span>5th Oct</span>72 USD</li>
+                        <li><span>6th Oct</span>70 USD</li>
+                        <li><span>7th Oct</span>69 USD</li>
+                        <li><span>2019-10-08</span>68 USD</li>
+                        <li><span>2019-10-09</span>70 USD</li>
+                        <li><span>2019-10-10</span>71 USD</li>
+                        <li class="active"><span>2019-10-11</span>66 USD<span>1,25,466 INR</span></li>
                     </ul>
                     <img src="images/linegraph.webp" alt="Graph" width="800" style="display: none;" />
                 </div>
@@ -96,40 +96,50 @@
                 <h3>FX Configurator</h3>
                 <div class="item-1">
                     <form class="form fxc-form" action="" method="post">
-                            <fieldset>
-                                    <legend>Notify Setting</legend>
-                        <ul>
-                            <li><label for="dcountry"><span>Source Country:</span></label>
-                                <input name="dcountry" value="India" disabled type="text" />
-                                <span class="error-msg">Country cannot be same</span></li>
-                            <li><label for="dcountry"><span>Country 2:</span></label>
-                                <input name="dcountry" placeholder="eg. USA" type="text" />
-                                <span class="error-msg">Country cannot be same</span>
-                            </li>
-                            <li><label for="trate"><span>Desired Target Rate:</span></label>
-                                <input name="trate" placeholder="enter target rate" type="number" />
-                                <span class="error-msg">Country cannot be same</span></li>
-                            <li><input id="submit1" type="button" value="Notify" /></li>
-                        </ul>
+                        <fieldset>
+                            <legend>Notify Setting</legend>
+                            <ul>
+                                <li><label for="dcountry"><span>Source Country:</span></label>
+                                    <input name="dcountry" value="India" disabled type="text" />
+                                    <span class="error-msg">Country cannot be same</span></li>
+                                <li><label for="dcountry"><span>Country 2:</span></label>
+                                    <input name="dcountry" placeholder="eg. USA" type="text" />
+                                    <span class="error-msg">Country cannot be same</span>
+                                </li>
+                                <li><label for="trate"><span>Desired Target Rate:</span></label>
+                                    <input name="trate" placeholder="enter target rate" type="number" />
+                                    <span class="error-msg">Country cannot be same</span></li>
+                                <li><input id="submit1" type="button" value="Notify" /></li>
+                            </ul>
                         </fieldset>
                     </form>
                     <!-- results -->
                     <h3>Results </h3>
-                    <div class="results">                            
-                        <div class="results-col-headings">
-                            <ul>
-                                <li>Source Country</li>
-                                <li>Dest. Country</li>
-                                <li>Fx Rate</li>
-                            </ul>
-                        </div>
-                        <div class="results-col-values">
-                        <ul>
-                            <li>India</li>
-                            <li>USA</li>
-                            <li>65</li>
-                        </ul>
-                    </div>
+                    <div class="results">
+
+                        <table>
+                            <tr>
+                                <th>Source Country</th>
+                                <th>Dest. Country</th>
+                                <th class="text-right">Fx Rate</th>
+                                <th class="text-center">Action(s)</th>
+                            </tr>
+                            <tr>
+                                <td>India</td>
+                                <td>USA</td>
+                                <td class="text-right">70</td>
+                                <td class="text-center"><a href="#" title="Delete"><img src="images/delete.svg" width="12" height="12"
+                                    alt="delete"></a></td>
+                            </tr>
+                            <tr>
+                                <td>India</td>
+                                <td>UK</td>
+                                <td class="text-right">90</td>
+                                <td class="text-center"><a href="#" title="Delete"><img src="images/delete.svg" width="12" height="12"
+                                    alt="delete"></a></td>
+                            </tr>
+
+                        </table>
                     </div>
                     <!-- /results -->
                 </div>
@@ -148,8 +158,8 @@
                                 <li><label for="dcountry"><span>Source Country:</span></label>
                                     <input name="scountry" id="baseCurrency" placeholder="eg. India" type="text" />
                                     <span class="error-msg">Country cannot be same</span></li>
-                                <li><a href="#" title="Reverse"><img src="images/exchange-arrows.svg" width="24" height="24"
-                                            alt="reverse"></a></li>
+                                <li><a href="#" title="Reverse"><img src="images/exchange-arrows.svg" width="24"
+                                            height="24" alt="reverse"></a></li>
                                 <li><label for="dcountry"><span>Destination Country:</span></label>
                                     <input name="scountry" id="exchangeCurrency" placeholder="eg. India" type="text" />
                                     <span class="error-msg">Country cannot be same</span>
@@ -160,24 +170,24 @@
                                 <li><input id="submit1" type="button" value="Calculate" /></li>
                             </ul>
                             <div class="fxresult">
-                                    <p>1 USD =</p>
-                                    <p>71.6615 <span>INR</span></p>
-                                </div>
+                                <p>1 USD =</p>
+                                <p>71.6615 <span>INR</span></p>
+                            </div>
                         </fieldset>
-                       
+
                     </form>
-                        
-                        <fieldset>
-                            <legend>FX rates for next 5 days</legend>
-                            <ul class="fxrates">
-                                <li><span>5th Oct</span>72 USD<span>1235345</span></li>
-                                <li><span>6th Oct</span>70 USD<span>1235345</span></li>
-                                <li><span>7th Oct</span>69 USD<span>1235345</span></li>
-                                <li><span>2019-10-08</span>68 USD<span>1235345</span></li>
-                                <li><span>2019-10-09</span>70 USD<span>1235345</span></li>
-                            </ul>
-                        </fieldset>
-                   
+
+                    <fieldset>
+                        <legend>FX rates for next 5 days</legend>
+                        <ul class="fxrates">
+                            <li><span>5th Oct</span>72 USD<span>1235345</span></li>
+                            <li><span>6th Oct</span>70 USD<span>1235345</span></li>
+                            <li><span>7th Oct</span>69 USD<span>1235345</span></li>
+                            <li><span>2019-10-08</span>68 USD<span>1235345</span></li>
+                            <li><span>2019-10-09</span>70 USD<span>1235345</span></li>
+                        </ul>
+                    </fieldset>
+
                 </div>
 
             </div>
