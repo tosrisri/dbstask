@@ -125,6 +125,7 @@ body {
 
 .iwrapper {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 .iwrapper .item {
@@ -132,22 +133,14 @@ body {
    background-color: var(--white);
    padding: 15px;
    border-radius: 3px;
-   margin: 10px 0;
+   margin: 1rem 0;
 }
-.iwrapper .item:first-child {
-  width: 100%;
-}
-.iwrapper .item:not(:first-child) {
-  width: 50%;
-
-}
-
 
 /* Form Styles */
 input, select, textarea {
   border: 1px solid #999;
   border-radius: 2px;
-  padding: 3px 2px;
+  padding: 7px 3px;
   margin: 0;
 }
 input[type="button"] {
@@ -164,7 +157,7 @@ input[type="button"] {
 }
 
 
-.form {
+.travel-plans .form {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -225,12 +218,24 @@ fieldset legend {
   font-weight: 0.8rem;
 }
 
+.fxc-cont ul li {
+  margin-right: 1rem;
+  font-size: 0.8rem;
+}
+
+.calc-cont ul {
+  margin: 10px 0;
+}
  .item-1 ul, .form-fields {
  list-style: none;
 }
  .item-1 ul li {
   display: inline-block;
-  border:0px solid red;
+}
+.fxc-form {
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 

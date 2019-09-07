@@ -48,12 +48,12 @@
                         <legend>Travel Countries</legend>
                         <ul class="form-fields">
                             <li><label for="scountry" id="scountry"><span>Source Country:</span></label>
-                                <input name="scountry" id="baseCurrency" placeholder="eg. India"  type="text" />
-                            <span class="error-msg">Country cannot be same</span>
+                                <input name="scountry" id="baseCurrency" placeholder="eg. India" type="text" />
+                                <span class="error-msg">Country cannot be same</span>
                             </li>
 
                             <li><label for="dcountry" id="dcountry"><span>Destination Country:</span></label>
-                                <input name="dcountry" id="exchangeCurrency" placeholder="eg. USA"  type="text" />
+                                <input name="dcountry" id="exchangeCurrency" placeholder="eg. USA" type="text" />
                                 <span class="error-msg">Country cannot be same</span>
                             </li>
                         </ul>
@@ -62,105 +62,92 @@
                         <legend>Travel Dates</legend>
                         <ul class="form-fields">
                             <li><label for="fdate" id="fdate"><span>From Date:</span></label>
-                                <input name="fdate" id="fromDate"  class="inputfield" placeholder="YYYY-MM-DD" />
+                                <input name="fdate" id="fromDate" class="inputfield" placeholder="YYYY-MM-DD" />
                                 <span class="error-msg">Country cannot be same</span>
                             </li>
                             <li>
                                 <label for="tdate" id="tdate"><span>To Date:</span></label>
-                                <input name="fdate" id="toDate"  class="inputfield" placeholder="YYYY-MM-DD" />
+                                <input name="fdate" id="toDate" class="inputfield" placeholder="YYYY-MM-DD" />
                                 <span class="error-msg">Country cannot be same</span>
                             </li>
                         </ul>
                     </fieldset>
                     <div class="w100 btn-cont">
-                        <input id="submit" type="button" value="Submit"/>
-                        <input id="reset" type="button" value="Reset"/>
+                        <input id="submit" type="button" value="Submit" />
+                        <input id="reset" type="button" value="Reset" />
                     </div>
                 </form>
                 <div class="pre-cont">
                     <h3>Predicted FX rates from 5th Oct to 15th Oct</h3>
                     <ul class="predictions">
-                        </ul>
+                    </ul>
                     <img src="images/linegraph.webp" alt="Graph" width="800" style="display: none;" />
                 </div>
             </div>
             <!-- /travel-plans -->
-            <!-- fxc -->
+            <!-- FX-Configurator -->
             <div class="item fxc-cont">
                 <h3>FX Configurator</h3>
                 <div class="item-1">
-                    <ul>
-                        <li><label for="dcountry"><span>Country 1:</span></label>
-                            <input name="dcountry" placeholder="eg. USA"  type="text" />
-                            <span class="error-msg">Country cannot be same</span>
-                        </li>
-                        <li><label for="dcountry"><span>Country 2:</span></label>
-                            <input name="dcountry" placeholder="eg. USA"  type="text" />
-                            <span class="error-msg">Country cannot be same</span>
-                        </li>
-                        <li><label for="checkbox1">Notify</label><input type="checkbox" id="checkbox1" checked /></li>
-                        <li><a href="#" title="Add Item"><img src="images/icon-add.png" alt="Add"></a></li>
-                        <li><a href="#" title="Remove Item"><img src="images/icon-remove.png" alt="Remove"></a></li>
-                    </ul>
-                    <ul>
-                        <li><label for="dcountry"><span>Country 1:</span></label>
-                            <input name="dcountry" placeholder="eg. USA"  type="text" />
-                            <span class="error-msg">Country cannot be same</span>
-                        </li>
-                        <li><label for="dcountry"><span>Country 2:</span></label>
-                            <input name="dcountry" placeholder="eg. USA"  type="text" />
-                            <span class="error-msg">Country cannot be same</span>
-                        </li>
-                        <li><label for="checkbox1">Notify</label><input type="checkbox" id="checkbox1" checked /></li>
-                        <li><a href="#" title="Add Item"><img src="images/icon-add.png" alt="Add"></a></li>
-                        <li><a href="#" title="Remove Item"><img src="images/icon-remove.png" alt="Remove"></a></li>
-                    </ul>
-                    <div class="btn-cont">
-                        <input id="save" type="button" value="Save" />
-                        <input id="reset" type="button" value="Reset"/>
-                    </div>
+                    <form class="form fxc-form" action="" method="post">
+                        <ul>
+                            <li><label for="dcountry"><span>Country 1:</span></label>
+                                <input name="dcountry" placeholder="eg. USA" type="text" />
+                                <span class="error-msg">Country cannot be same</span></li>
+                            <li><label for="dcountry"><span>Country 2:</span></label>
+                                <input name="dcountry" placeholder="eg. USA" type="text" />
+                                <span class="error-msg">Country cannot be same</span>
+                            </li>
+                            <li><label for="trate"><span>Target Rate:</span></label>
+                                <input name="trate" placeholder="enter target rate" type="number" />
+                                <span class="error-msg">Country cannot be same</span></li>
+                                <li><input id="submit1" type="button" value="Notify" /></li>
+                        </ul>
+                    </form>
                 </div>
             </div>
-            <!-- /fxc -->
+            <!-- /FX-Configurator -->
 
             <!-- calc-cont -->
             <div class="item calc-cont">
                 <h3>FX, Balance Calculator</h3>
                 <div class="item-1">
-                    <fieldset>
-                        <legend>Calculate FX</legend>
-                        <p>Enter either of the Currencies to show the exchange value of other</p>
-                        <ul>
-                            <li><label for="scurrency"><span>Currency 1:</span></label>
-                                <input name="scurrency" placeholder="eg. 1000"  type="number" />
-                                <span class="error-msg">Country cannot be same</span>
-                            </li>
-                            <li>
-                                <p>=</p>
-                            </li>
-                            <li><label for="dcurrency"><span>Currency 2:</span></label>
-                                <input name="dcurrency" placeholder="eg. 1000"  type="number" />
-                                <span class="error-msg">Country cannot be same</span>
-                            </li>
-                        </ul>
+                    <form class="form" action="" method="post">
+                        <fieldset>
+                            <legend>Calculate FX</legend>
+                            <p>Enter either of the Currencies to show the exchange value of other</p>
+                            <ul>
+                                <li><label for="scurrency"><span>Source Currency:</span></label>
+                                    <input name="scurrency" placeholder="eg. 1000" type="number" />
+                                    <span class="error-msg">Country cannot be same</span>
+                                </li>
+                                <li>
+                                    <p>=</p>
+                                </li>
+                                <li><label for="dcurrency"><span>Destination Currency:</span></label>
+                                    <input name="dcurrency" placeholder="eg. 1000" type="number" />
+                                    <span class="error-msg">Country cannot be same</span>
+                                </li>
+                            </ul>
 
-                    </fieldset>
-                    <fieldset>
-                        <legend>Balance Calculated FX</legend>
-                        <p>Your Account balance: Rs.1,00,000</p>
-                        <p>Your FX rates for next 5 days</p>
-                        <ul>
-                            <li><span>5th Oct</span>72</li>
-                            <li><span>6th Oct</span>70</li>
-                            <li><span>7th Oct</span>69</li>
-                            <li><span>2019-10-08</span>68</li>
-                            <li><span>2019-10-09</span>70</li>
-                            <li><span>2019-10-10</span>71</li>
-                            <li><span>2019-10-11</span>66</li>
-                        </ul>
-                    </fieldset>
-
+                        </fieldset>
+                        <fieldset>
+                            <legend>Balance Calculated FX</legend>
+                            <p>Your Account balance: Rs.1,00,000</p>
+                            <p>Your FX rates for next 5 days</p>
+                            <ul>
+                                <li><span>5th Oct</span>72</li>
+                                <li><span>6th Oct</span>70</li>
+                                <li><span>7th Oct</span>69</li>
+                                <li><span>2019-10-08</span>68</li>
+                                <li><span>2019-10-09</span>70</li>
+                                <li><span>2019-10-10</span>71</li>
+                                <li><span>2019-10-11</span>66</li>
+                            </ul>
+                        </fieldset>
+                    </form>
                 </div>
+
             </div>
             <!-- /calc-cont -->
         </div>
