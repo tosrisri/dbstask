@@ -10,7 +10,8 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-
+	<link rel="stylesheet" href="css/jquery-ui.css">
+  	<link href="css/select2.css" rel="stylesheet"/>
 </head>
 
 <body id="DBSForex">
@@ -55,11 +56,11 @@
                             <legend>Travel Countries</legend>
                             <div class="form-item">
                                 <label for="scountry" id="scountry"><span>Source Country:</span></label>
-                                <input name="scountry" placeholder="eg. India" required="required" type="text" />
+                                <input name="scountry" id="baseCurrency" placeholder="eg. India" required="required" type="text" />
                             </div>
                             <div class="form-item">
                                 <label for="dcountry" id="dcountry"><span>Destination Country:</span></label>
-                                <input name="dcountry" placeholder="eg. USA" required="required" type="text" />
+                                <input name="dcountry" id="exchangeCurrency" placeholder="eg. USA" required="required" type="text" />
                             </div>
                         </fieldset>
 
@@ -67,11 +68,11 @@
                             <legend>Travel Dates</legend>
                             <div class="form-item">
                                 <label for="fdate" id="fdate"><span>From Date:</span></label>
-                                <input name="fdate" required="required" type="date" />
+                                <input name="fdate" id="fromDate" required="required"/>
                             </div>
                             <div class="form-item">
                                 <label for="tdate" id="tdate"><span>To Date:</span></label>
-                                <input name="fdate" required="required" type="date" />
+                                <input name="fdate" id="toDate" required="required" />
                             </div>
                         </fieldset>
                     </form>
@@ -88,12 +89,10 @@
 
     </div>
 
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="js/main.js"></script>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/select2.js"></script>
+	<script src="js/main.js"></script>
 
 </body>
 
