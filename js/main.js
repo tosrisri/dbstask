@@ -5,7 +5,6 @@ $(document).ready(function() {
 		 ajax: { 
 		        url: locationUrl+"/api/v1/rightTimeToFx/getCountriesAndCurrencies",
 		        dataType: 'json',
-		        quietMillis: 250,
 		        results: function (data, page) { 
 		            return { results: formatCountriesToSelect2(data.countriesAndCurrencies) };
 		        },
@@ -16,7 +15,6 @@ $(document).ready(function() {
 		ajax: { 
 	        url: locationUrl+"/api/v1/rightTimeToFx/getCountriesAndCurrencies",
 	        dataType: 'json',
-	        quietMillis: 250,
 	        results: function (data, page) { 
 	            return { results: formatCountriesToSelect2(data.countriesAndCurrencies) };
 	        },
@@ -49,22 +47,23 @@ $(document).ready(function() {
 		}
 	});
 	
-	$("#fromDate").on('change', function(){
+	/*$("#fromDate").on('change', function(){
 		var minDate = new Date($(this).val());
 		var maxDate = new Date($(this).val());
 		maxDate.setMonth(maxDate.getMonth() + 3);
 		$('#toDate').val("");
 		$('#toDate').datepicker('option', { minDate: minDate,
 			maxDate : maxDate});
-	})
+	})*/
 	
 	$("#reset").on('click', function() {
-		$(".error").remove();
 		$("#fromDate,#toDate").val("");
 		$("#exchangeCurrency,#baseCurrency").select2("val", "");
+		$(".predictions").html("");
+		clearError();
 	});
 	
-	$("#fromDate,#toDate").on("focusout", function() {
+	$("#fromDate,#toDate").on("focusin", function() {
 		$(this).removeClass("error-field");
 		$(this).next().html("");
 	});
@@ -85,16 +84,20 @@ function displayError($id, $parentId, msg) {
 }
 
 function clearError() {
-	$(".item travel-plans").findAll()
-};
+	$("#fromDate,#toDate").removeClass("error-field");
+	$("#fromDate,#toDate").next().html("");
+	$('#baseCurrency,#exchangeCurrency').prev().removeClass("error-field");
+	$('#baseCurrency,#exchangeCurrency').parent().find(".error-msg").html("");
+
+}
 
 function validateForm() {
 	var fromDate = $('#fromDate').val();
 	var toDate = $('#toDate').val();
 	var baseCurrency = $('#baseCurrency').val();
 	var exchangeCurreny = $('#exchangeCurrency').val();
-	$("input").removeClass("error-field");
 	var flag = true;
+	clearError();
 	if (fromDate.length < 1) {
 		displayError($('#fromDate'), $('#fromDate').parent(), "This field is required");
 		flag = false;
@@ -113,6 +116,8 @@ function validateForm() {
 	} 
 	if(flag) {
 		if(baseCurrency == exchangeCurreny) {
+			displayError($('#baseCurrency').prev(), $('#baseCurrency').parent(), "Both currencies cannot be same.");
+			displayError($('#exchangeCurrency').prev(), $('#exchangeCurrency').parent(), "");
 			flag = false;
 		}
 	}
@@ -120,6 +125,8 @@ function validateForm() {
 		var formattedFromDate = new Date(fromDate);
 		var formattedToDate = new Date(toDate);
 		if(formattedFromDate > formattedToDate) {
+			displayError($('#fromDate'), $('#fromDate').parent(), "From date cannot be greater than to date");
+			displayError($('#toDate'), $('#toDate').parent(), "");
 			flag = false;
 		}
 	}
@@ -142,8 +149,10 @@ function getExchangeRates(inputObj) {
 }
 
 function displayExchangeRates(exchangeRates) {
+	$("#predictedFxRatesId").append("Predicted FX rates from "+$("#fromDate").val()+" to "+$("#toDate").val());
+	$(".predictions").html("");
 	$.each(exchangeRates, function(i, rate) {
-		$("#predictions").append("<li><span>"+rate.date+"</span>"+rate.exchangeRate+" "+rate.exchangeCurreny+"</li>")
+		$(".predictions").append("<li><span>"+rate.date+"</span>"+rate.exchangeRate+" "+rate.exchangeCurreny+"</li>")
 	});	
 }
 
