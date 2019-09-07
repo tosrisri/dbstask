@@ -149,7 +149,8 @@ function getExchangeRates(inputObj) {
 }
 
 function displayExchangeRates(exchangeRates) {
-	$("#predictedFxRatesId").append("Predicted FX rates from "+$("#fromDate").val()+" to "+$("#toDate").val());
+	$("#fromSpan").html("from "+$("#fromDate").val());
+	$("#toSpan").html(" to "+$("#toDate").val());
 	$(".predictions").html("");
 	$.each(exchangeRates, function(i, rate) {
 		$(".predictions").append("<li><span>"+rate.date+"</span>"+rate.exchangeRate+" "+rate.exchangeCurreny+"</li>")
