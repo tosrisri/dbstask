@@ -60,6 +60,15 @@ h1, h2, h3, h4, h5, h6, img, div, section, ul, ol, li {
   padding: 10px;
 }
 
+/* Form Styles */
+input, select {
+  border: 1px solid #999;
+  border-radius: 2px;
+  padding: 3px 2px;
+  margin: 0;
+}
+
+
 
 /* Custom Styles */
 
@@ -120,12 +129,29 @@ body {
   flex-wrap: wrap;
 }
 .iwrapper .item {
-  border: 1px solid red;
+  border: 1px solid red; 
+   background-color: var(--white);
+   padding: 15px;
+   border-radius: 3px;
 }
 
 .form {
-  
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+fieldset {
+  border: none;
+  border-top: 1px dotted #ccc;
+}
+fieldset legend {
+  margin: 0 10px 0 0;
+  padding: 10px; 
 }
 .form-item {
-  border: 1px solid blue;
+  border: 0px solid blue;
+  margin-bottom: 10px;
+}
+.form-item label {
+  display: block;
 }
