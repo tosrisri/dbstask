@@ -207,6 +207,13 @@ fieldset legend {
   padding: 5px  0.5rem;
   text-align: center;
   color: var(--primary-color);
+  vertical-align: text-top;
+  border-radius: 3px;
+}
+.pre-cont ul li.active {
+  background-color: #fffeb3;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    border: 1px solid greenyellow;
 }
 .pre-cont ul li span {
   display: block;
@@ -234,8 +241,11 @@ fieldset legend {
 }
 .fxc-form {
   display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-bottom: 15px;
+  border-bottom: 1px dotted #ccc;
+  margin-bottom: 10px;
 }
 
 
@@ -295,4 +305,17 @@ fieldset legend {
 }
 .error-field {
   border: 1px solid red;
+}
+
+
+/* results */
+.results {
+  display: flex;
+  flex-wrap: wrap;
+}
+.results .items {
+  border: 1px  solid red;
+}
+.results-col-headings {
+
 }

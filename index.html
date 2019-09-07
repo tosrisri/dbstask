@@ -7,11 +7,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
+    
     <link rel="stylesheet" href="css/jquery-ui.css">
-    <link href="css/select2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/select2.css" />
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body id="DBSForex">
@@ -80,6 +79,15 @@
                 <div class="pre-cont">
                     <h3>Predicted FX rates from 5th Oct to 15th Oct</h3>
                     <ul class="predictions">
+                            <ul>
+                                    <li><span>5th Oct</span>72 USD</li>
+                                    <li><span>6th Oct</span>70 USD</li>
+                                    <li><span>7th Oct</span>69 USD</li>
+                                    <li><span>2019-10-08</span>68 USD</li>
+                                    <li><span>2019-10-09</span>70 USD</li>
+                                    <li><span>2019-10-10</span>71 USD</li>
+                                    <li class="active"><span>2019-10-11</span>66 USD<span>1,25,466 INR</span></li>
+                                </ul>
                     </ul>
                     <img src="images/linegraph.webp" alt="Graph" width="800" style="display: none;" />
                 </div>
@@ -91,8 +99,8 @@
                 <div class="item-1">
                     <form class="form fxc-form" action="" method="post">
                         <ul>
-                            <li><label for="dcountry"><span>Country 1:</span></label>
-                                <input name="dcountry" placeholder="eg. USA" type="text" />
+                            <li><label for="dcountry"><span>Source Country:</span></label>
+                                <input name="dcountry" value="India" disabled type="text" />
                                 <span class="error-msg">Country cannot be same</span></li>
                             <li><label for="dcountry"><span>Country 2:</span></label>
                                 <input name="dcountry" placeholder="eg. USA" type="text" />
@@ -101,9 +109,27 @@
                             <li><label for="trate"><span>Target Rate:</span></label>
                                 <input name="trate" placeholder="enter target rate" type="number" />
                                 <span class="error-msg">Country cannot be same</span></li>
-                                <li><input id="submit1" type="button" value="Notify" /></li>
+                            <li><input id="submit1" type="button" value="Notify" /></li>
                         </ul>
                     </form>
+                    <!-- results -->
+                    <div class="results">
+                        <div class="results-col-headings">
+                            <ul>
+                                <li>Source Country</li>
+                                <li>Dest. Country</li>
+                                <li>Fx Rate</li>
+                                <li><input type="checkbox" name="notified" value="" checked /></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <ul>
+                            <li>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /results -->
                 </div>
             </div>
             <!-- /FX-Configurator -->
