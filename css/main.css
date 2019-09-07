@@ -60,13 +60,7 @@ h1, h2, h3, h4, h5, h6, img, div, section, ul, ol, li {
   padding: 10px;
 }
 
-/* Form Styles */
-input, select {
-  border: 1px solid #999;
-  border-radius: 2px;
-  padding: 3px 2px;
-  margin: 0;
-}
+
 
 
 
@@ -135,18 +129,29 @@ body {
    border-radius: 3px;
 }
 
+
+/* Form Styles */
+input, select, textarea {
+  border: 1px solid #999;
+  border-radius: 2px;
+  padding: 3px 2px;
+  margin: 0;
+}
+
 .form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   font-size: 0.8rem;
 }
 fieldset {
-  border: none;
-  border-top: 1px dotted #ccc;
+  border: 1px dotted #ccc;
+  margin-right: 20px;
+  padding: 10px;
 }
 fieldset legend {
-  margin: 0 10px 0 0;
-  padding: 10px; 
+  margin: 0 10px 0 0px;
+  padding: 10px;
+  font-weight: bold;
 }
 .form-item {
   border: 0px solid blue;
