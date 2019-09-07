@@ -96,6 +96,8 @@
                 <h3>FX Configurator</h3>
                 <div class="item-1">
                     <form class="form fxc-form" action="" method="post">
+                            <fieldset>
+                                    <legend>Notify Setting</legend>
                         <ul>
                             <li><label for="dcountry"><span>Source Country:</span></label>
                                 <input name="dcountry" value="India" disabled type="text" />
@@ -104,11 +106,12 @@
                                 <input name="dcountry" placeholder="eg. USA" type="text" />
                                 <span class="error-msg">Country cannot be same</span>
                             </li>
-                            <li><label for="trate"><span>Target Rate:</span></label>
+                            <li><label for="trate"><span>Desired Target Rate:</span></label>
                                 <input name="trate" placeholder="enter target rate" type="number" />
                                 <span class="error-msg">Country cannot be same</span></li>
                             <li><input id="submit1" type="button" value="Notify" /></li>
                         </ul>
+                        </fieldset>
                     </form>
                     <!-- results -->
                     <h3>Results </h3>
@@ -137,25 +140,33 @@
             <div class="item calc-cont">
                 <h3>Target Balance Calculator</h3>
                 <div class="item-1">
-                    <form class="form" action="" method="post">
+                    <form class="form fxc-form" action="" method="post">
                         <fieldset>
                             <legend>FX Calculator</legend>
                             <p>Enter the FX required</p>
                             <ul>
-                                <li><label for="scurrency"><span>Desired Currency (USD):</span></label>
-                                    <input name="scurrency" value="1000" type="number" />
-                                    <span class="error-msg">Should be a Number</span>
-                                </li>
-                                <li>
-                                    <p>=&gt; </p>
-                                </li>
-                                <li><label for="dcurrency"><span>Amount required (INR):</span></label>
-                                    <input name="dcurrency"  type="number" value="125488" readonly disabled />
+                                <li><label for="dcountry"><span>Source Country:</span></label>
+                                    <input name="scountry" id="baseCurrency" placeholder="eg. India" type="text" />
+                                    <span class="error-msg">Country cannot be same</span></li>
+                                <li><a href="#" title="Reverse"><img src="images/exchange-arrows.svg" width="24" height="24"
+                                            alt="reverse"></a></li>
+                                <li><label for="dcountry"><span>Destination Country:</span></label>
+                                    <input name="scountry" id="exchangeCurrency" placeholder="eg. India" type="text" />
                                     <span class="error-msg">Country cannot be same</span>
                                 </li>
+                                <li><label for="trate"><span>Amount:</span></label>
+                                    <input name="trate" placeholder="enter target rate" type="number" />
+                                    <span class="error-msg">Country cannot be same</span></li>
+                                <li><input id="submit1" type="button" value="Calculate" /></li>
                             </ul>
-
+                            <div class="fxresult">
+                                    <p>1 USD =</p>
+                                    <p>71.6615 <span>INR</span></p>
+                                </div>
                         </fieldset>
+                       
+                    </form>
+                        
                         <fieldset>
                             <legend>FX rates for next 5 days</legend>
                             <ul class="fxrates">
@@ -166,7 +177,7 @@
                                 <li><span>2019-10-09</span>70 USD<span>1235345</span></li>
                             </ul>
                         </fieldset>
-                    </form>
+                   
                 </div>
 
             </div>

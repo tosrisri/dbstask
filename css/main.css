@@ -252,8 +252,13 @@ fieldset legend {
   border-bottom: 1px dotted #ccc;
   margin-bottom: 10px;
 }
+.fxc-form li img {
+  vertical-align: middle;
+}
 
-
+.item-1 .fxc-form ul li {
+  margin-right: 1rem;
+}
 .item-1 ul li label, .form-fields li label {
   display: block;
 }
@@ -319,10 +324,24 @@ fieldset legend {
 }
 .results li {
   display: inline-block;
-  border: 1px solid;
-  min-width: 100px;
+  min-width: 38%;
   margin-right: 5px;
   text-align: left;
+}
+.results li:last-child {
+  min-width: 10%;
+  text-align: right;
+}
+.results-col-headings li {
+  font-weight: bold;
+  padding: 5px 0;
+  margin-bottom: 5px;
+  border-bottom: 1px solid;
+}
+.results-col-values li {
+  padding-bottom: 3px;
+  margin-bottom: 3px;
+  border-bottom: 1px dotted #ccc;
 }
 
 .calc-cont {
@@ -332,6 +351,19 @@ fieldset legend {
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.fxresult {
+  text-align: center;
+  border-top: 1px dotted #ccc;
+  margin: 2rem 0;
+  padding-top: 2rem;
+}
+.fxresult p {
+  font-size: 1.5rem;
+}
+.fxresult p:last-child {
+  font-size: 3rem;
 }
 
 
