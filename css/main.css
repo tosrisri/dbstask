@@ -123,10 +123,18 @@ body {
   flex-wrap: wrap;
 }
 .iwrapper .item {
-  border: 1px solid red; 
+  border: 0px solid red; 
    background-color: var(--white);
    padding: 15px;
    border-radius: 3px;
+   margin: 10px 0;
+}
+.iwrapper .item:first-child {
+  width: 100%;
+}
+.iwrapper .item:not(:first-child) {
+  width: 50%;
+
 }
 
 
@@ -138,9 +146,12 @@ input, select, textarea {
   margin: 0;
 }
 
+
+
 .form {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   font-size: 0.8rem;
 }
 fieldset {
@@ -158,5 +169,38 @@ fieldset legend {
   margin-bottom: 10px;
 }
 .form-item label {
+  display: block;
+}
+.form-item .select2-container {
+  width: 100%;
+}
+.form-item .select2-result-label {
+  font-size: 0.7rem;
+}
+
+.pre-cont {
+  font-size: 0.8rem;
+}
+.pre-cont ul {
+  list-style: none;
+}
+.pre-cont ul li {
+  display: inline;
+}
+
+
+.fxc-cont {
+  font-weight: 0.8rem;
+}
+
+.fxc-cont  .item-1 ul {
+ list-style: none;
+}
+.fxc-cont .item-1 ul li {
+  display: inline-block;
+  border:0px solid red;
+}
+
+.fxc-cont ul li label {
   display: block;
 }

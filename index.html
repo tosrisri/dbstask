@@ -10,8 +10,8 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/jquery-ui.css">
-  	<link href="css/select2.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link href="css/select2.css" rel="stylesheet" />
 </head>
 
 <body id="DBSForex">
@@ -40,59 +40,89 @@
         <!-- /page-title -->
 
         <div class="iwrapper">
-            <!-- graph-cont -->
-            <div class="item graph-cont w100">
-                <h3>Last 3 years Forex data</h3>
-                <img src="images/linegraph.webp" alt="Graph" width="100%" />
-            </div>
-            <!-- /graph-cont -->
             <!-- travel-plans -->
             <div class="item travel-plans">
                 <h3>Itinerary</h3>
+                <form class='form' action="" method="post">
+                    <fieldset>
+                        <legend>Travel Countries</legend>
+                        <div class="form-item">
+                            <label for="scountry" id="scountry"><span>Source Country:</span></label>
+                            <input name="scountry" id="baseCurrency" placeholder="eg. India" required="required"
+                                type="text" />
+                        </div>
+                        <div class="form-item">
+                            <label for="dcountry" id="dcountry"><span>Destination Country:</span></label>
+                            <input name="dcountry" id="exchangeCurrency" placeholder="eg. USA" required="required"
+                                type="text" />
+                        </div>
+                    </fieldset>
 
-                <section>
-                    <form class='form' action="" method="post">
-                        <fieldset>
-                            <legend>Travel Countries</legend>
-                            <div class="form-item">
-                                <label for="scountry" id="scountry"><span>Source Country:</span></label>
-                                <input name="scountry" id="baseCurrency" placeholder="eg. India" required="required" type="text" />
-                            </div>
-                            <div class="form-item">
-                                <label for="dcountry" id="dcountry"><span>Destination Country:</span></label>
-                                <input name="dcountry" id="exchangeCurrency" placeholder="eg. USA" required="required" type="text" />
-                            </div>
-                        </fieldset>
-
-                        <fieldset>
-                            <legend>Travel Dates</legend>
-                            <div class="form-item">
-                                <label for="fdate" id="fdate"><span>From Date:</span></label>
-                                <input name="fdate" id="fromDate" required="required"/>
-                            </div>
-                            <div class="form-item">
-                                <label for="tdate" id="tdate"><span>To Date:</span></label>
-                                <input name="fdate" id="toDate" required="required" />
-                            </div>
-                        </fieldset>
-                    </form>
-                    <div class="pre-cont">
-                        
+                    <fieldset>
+                        <legend>Travel Dates</legend>
+                        <div class="form-item">
+                            <label for="fdate" id="fdate"><span>From Date:</span></label>
+                            <input name="fdate" id="fromDate" required="required" />
+                        </div>
+                        <div class="form-item">
+                            <label for="tdate" id="tdate"><span>To Date:</span></label>
+                            <input name="fdate" id="toDate" required="required" />
+                        </div>
+                    </fieldset>
+                    <div class="form-item w100 btn-cont">
+                        <button id="send" type="submit">Submit</button>
+                        <button id="reset" type="reset">Reset</button>
                     </div>
-
-                </section>
-               
-
+                </form>
+                <div class="pre-cont">
+                    <h3>Predicted FX rates from 5th Oct to 15th Oct</h3>
+                    <img src="images/linegraph.webp" alt="Graph" width="100%" />
+                </div>
             </div>
             <!-- /travel-plans -->
+            <!-- fxc -->
+            <div class="item fxc-cont">
+                <section>
+                    <h3>FX Configurator</h3>
+                    <div class="item-1">
+                        <ul><li><label for="dcountry"><span>Country 1:</span></label>
+                            <input name="dcountry"  placeholder="eg. USA" required="required" type="text" /></li>
+                        <li><label for="dcountry"><span>Country 2:</span></label>
+                            <input name="dcountry"  placeholder="eg. USA" required="required" type="text" /></li>
+                            <li><label for="checkbox1">Notify</label><input type="checkbox" id="checkbox1" checked /></li>
+                            <li><a href="#" title="Add Item"><img src="images/icon-add.png" alt="Add"></a></li>
+                            <li><a href="#" title="Remove Item"><img src="images/icon-remove.png" alt="Remove"></a></li>
+                        </ul>
+                        <ul><li><label for="dcountry"><span>Country 1:</span></label>
+                            <input name="dcountry"  placeholder="eg. USA" required="required" type="text" /></li>
+                        <li><label for="dcountry"><span>Country 2:</span></label>
+                            <input name="dcountry"  placeholder="eg. USA" required="required" type="text" /></li>
+                            <li><label for="checkbox1">Notify</label><input type="checkbox" id="checkbox1" checked /></li>
+                            <li><a href="#" title="Add Item"><img src="images/icon-add.png" alt="Add"></a></li>
+                            <li><a href="#" title="Remove Item"><img src="images/icon-remove.png" alt="Remove"></a></li>
+                        </ul>
+                        <div class="btn-cont">
+                                <button id="save" type="submit">Save</button>
+                                <button id="reset" type="reset">Reset</button>
+                            </div>
+                    </div>                   
+                </section>
+            </div>
+            <!-- /fxc -->
+
+            <!-- calc-cont -->
+            <div class="calc-cont">
+                
+            </div>
+             <!-- /calc-cont -->
         </div>
 
     </div>
 
-	<script src="js/jquery-3.4.1.min.js"></script>
-	<script src="js/jquery-ui.js"></script>
-	<script src="js/select2.js"></script>
-	<script src="js/main.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/select2.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 
