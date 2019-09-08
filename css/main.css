@@ -37,6 +37,9 @@ h3 {
 .float-right {
     float: right;
 }
+.text-white {
+  color: var(--white) !important;
+}
 .float-left {
     float: left;
 }
@@ -100,18 +103,18 @@ body {
 .gnav ul li { 
   display: inline-block; 
   border-right: 1px solid #ccc; 
-  padding: 0 10px;
+  padding: 0 7px 0 2px;
   color: var(--secondary-color);
   font-size: 0.8rem; }
 .gnav ul li:last-child { 
   border: none; 
   padding-right: 20px; }  
 .gnav li a {     
-  color: var(--white);
+  color: var(--secondary-color);
   text-decoration: none;
   font-size: 0.7rem; }
 .gnav li a:hover {
-  color: var(--primary-color);
+  color: var(--white);
 } 
 
 
@@ -249,8 +252,10 @@ fieldset legend {
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding-bottom: 15px;
-  border-bottom: 1px dotted #ccc;
   margin-bottom: 10px;
+}
+.fxc-form fieldset {
+  width: 100%;
 }
 .fxc-form li img {
   vertical-align: middle;
