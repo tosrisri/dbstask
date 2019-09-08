@@ -117,6 +117,22 @@ body {
   color: var(--white);
 } 
 
+.noti-cont {
+  position: relative;
+}
+.noti-show {
+  position: absolute;
+  padding: 15px;
+  top: 21px;
+  right: 0px;
+  width: 200px;
+  background-color: rgba(255,255,255,0.9);
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  min-height: 200px;
+  text-align: left;
+}
+
 
 .page-title {
   font-size: 1.2rem;
@@ -166,9 +182,7 @@ input[type="button"] {
   flex-wrap: wrap;
   font-size: 0.8rem;
 }
-.travel-plans fieldset {
-  width: 48%;
-}
+
 fieldset {
   border: 1px dotted #ccc;
   padding: 10px 10px 20px;
@@ -176,6 +190,7 @@ fieldset {
 }
 .travel-plans fieldset:first-child {
   margin-right: 10px;
+  width: 51%;
 }
 fieldset legend {
   padding: 0 10px 0 10px;
