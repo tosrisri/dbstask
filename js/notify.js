@@ -1,14 +1,14 @@
 var notifcationUrl = "http://192.168.43.53:8081";
 
 $(document).ready(function() {
-	$("#travelDate").datepicker({
+	/*$("#travelDate").datepicker({
 		dateFormat: "yy-mm-dd",
 		minDate : new Date(),
 		maxDate : "+3m",
 		buttonImageOnly: true,
 		buttonImage: "calendar.gif",
 		buttonText: "Calendar"
-	});
+	});*/
 	$("#notify").on("click", function() {
 		var saveObj = {};
 		baseCurrency = $("#alertBaseCurrency").select2("data");
@@ -20,7 +20,7 @@ $(document).ready(function() {
 		saveObj.notificationsRequired = 'Y',
 		saveObj.desiredExchangeRate = $("#drate").val();
 		saveObj.userId = 123456,
-		saveObj.travelDate = $("#travelDate").val();
+		//saveObj.travelDate = $("#travelDate").val();
 		var alertConfigs = [];
 		alertConfigs.push(saveObj);
 		var requestObj  = {};
@@ -45,8 +45,8 @@ function saveAlertConfigurations(saveObj) {
 }
 
 function clearNotificationForm() {
-	$("#travelDate").removeClass("error-field");
-	$("#travelDate").next().html("");
+	//$("#travelDate").removeClass("error-field");
+	//$("#travelDate").next().html("");
 	$("#drate").removeClass("error-field");
 	$("#drate").next().html("");
 	$('#alertBaseCurrency,#alertDestCurrency').prev().removeClass("error-field");
@@ -93,7 +93,7 @@ function displayAlertConfigurations(alertConfigs) {
 	$("#alertConfigBody").html("");
 	$.each(alertConfigs, function(i, config) {
 		var markup = "<tr><td>" + config.baseCurrencyCountry + "</td><td>" + config.exchangeCurrencyCountry + 
-		"<td class='text-center'>" + config.desiredExchangeRate + "</td><td class='text-center'>" + config.travelDate +"</td>" +
+		"<td class='text-center'>" + config.desiredExchangeRate + "</td>" +
 			"<td class='text-center'><a title='Delete' class='deleteConfig' data-id="+config.id+"><img src='images/delete.svg' width='12' height='12'" +
 			"alt='=delete'/></a></td></tr>";
 		$("#alertConfigBody").append(markup);
