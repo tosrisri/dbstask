@@ -27,6 +27,12 @@ $(document).ready(function() {
 		$('#exchangeCurrency1').parent().find(".error-msg").html(""); 
 	});
 	
+	$("#reverseId").on('click', function() {
+		baseCurrency = $("#baseCurrency1").select2("data");
+		destCurrency = $("#exchangeCurrency1").select2("data"); 
+		$("#baseCurrency1").select2("val", destCurrency.id);
+		$("#exchangeCurrency1").select2("val", baseCurrency.id);
+	});
 });
 
 function formatDate(date) {
@@ -42,8 +48,6 @@ function formatDate(date) {
 
     return [year, month, day].join('-');
 }
-
-
 
 function getCalculatorExchangeRates(inputObj) {
 	$.ajax({
@@ -68,10 +72,11 @@ function displayCalculatorRates(exchangeRates) {
 		if(i == 0) {
 			$('#convertedFrom').html(toRate+" "+rate.baseCurrency);
 			$('#convertedTo').html(finalRate+" "+rate.exchangeCurreny);
+		} else if(i < 6 ){
+			$(".fxrates").append("<li><span>"+rate.date+"</span><span>"+rate.exchangeRate+" "+rate.exchangeCurreny+"</span><span>"+finalRate+"</span></li>")
 		} else {
-			
+			return false;
 		}
-		$(".fxrates").append("<li><span>"+rate.date+"</span><span>"+rate.exchangeRate+" "+rate.exchangeCurreny+"</span><span>"+finalRate+"</span></li>")
 	});
 }
 
@@ -96,7 +101,7 @@ function validateCalculatorForm() {
 	var flag = true;
 	clearCalculatorFormError();
 	if (trate.length < 1) {
-		displayError($('#trate'), $('#trate').parent(), "This field is required");
+		displayError($('#drate'), $('#drate').parent(), "This field is required");
 		flag = false;
 	}
 	if (baseCurrency.length < 1) {

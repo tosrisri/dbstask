@@ -10,22 +10,25 @@ $(document).ready(function() {
 		buttonText: "Calendar"
 	});*/
 	$("#notify").on("click", function() {
-		var saveObj = {};
-		baseCurrency = $("#alertBaseCurrency").select2("data");
-		destCurrency = $("#alertDestCurrency").select2("data");
-		saveObj.baseCurrency = baseCurrency.id;
-		saveObj.baseCurrencyCountry = baseCurrency.text;
-		saveObj.exchangeCurrency = destCurrency.id;
-		saveObj.exchangeCurrencyCountry = destCurrency.text;
-		saveObj.notificationsRequired = 'Y',
-		saveObj.desiredExchangeRate = $("#drate").val();
-		saveObj.userId = 123456,
-		//saveObj.travelDate = $("#travelDate").val();
-		alertConfigs = [];
-		alertConfigs.push(saveObj);
-		var requestObj  = {};
-		requestObj["alertConfigs"] = alertConfigs;
-		saveAlertConfigurations(requestObj);
+		if(validateAlertConfigForm()) {
+			
+			var saveObj = {};
+			baseCurrency = $("#alertBaseCurrency").select2("data");
+			destCurrency = $("#alertDestCurrency").select2("data");
+			saveObj.baseCurrency = baseCurrency.id;
+			saveObj.baseCurrencyCountry = baseCurrency.text;
+			saveObj.exchangeCurrency = destCurrency.id;
+			saveObj.exchangeCurrencyCountry = destCurrency.text;
+			saveObj.notificationsRequired = 'Y',
+			saveObj.desiredExchangeRate = $("#drate").val();
+			saveObj.userId = 123456,
+			//saveObj.travelDate = $("#travelDate").val();
+			alertConfigs = [];
+			alertConfigs.push(saveObj);
+			var requestObj  = {};
+			requestObj["alertConfigs"] = alertConfigs;
+			saveAlertConfigurations(requestObj);
+		}
 	});
 	
 	getUserAlertConfigurations();
@@ -105,4 +108,38 @@ function displayAlertConfigurations(alertConfigs) {
 		deleteAlertConfiguration(id, $(this));
 	});
 	
+}
+
+function displayError($id, $parentId, msg) {
+	$id.addClass("error-field");
+	$parentId.find(".error-msg").html(msg);
+	$parentId.find(".error-msg").css("display", "block");
+}
+
+function validateAlertConfigForm() {
+	var trate = $('#drate').val();
+	var baseCurrency = $('#alertBaseCurrency').val();
+	var exchangeCurreny = $('#alertDestCurrency').val();
+	var flag = true;
+	clearNotificationForm();
+	if (trate.length < 1) {
+		displayError($('#trate'), $('#trate').parent(), "This field is required");
+		flag = false;
+	}
+	if (baseCurrency.length < 1) {
+		displayError($('#alertBaseCurrency').prev(), $('#alertBaseCurrency').parent(), "This field is required");
+		flag = false;
+	} 
+	if (exchangeCurreny.length < 1) {
+		displayError($('#alertDestCurrency').prev(), $('#alertDestCurrency').parent(), "This field is required");
+		flag = false;
+	} 
+	if(flag) {
+		if(baseCurrency == exchangeCurreny) {
+			displayError($('#alertBaseCurrency').prev(), $('#alertBaseCurrency').parent(), "Both currencies cannot be same.");
+			displayError($('#alertDestCurrency').prev(), $('#alertDestCurrency').parent(), "");
+			flag = false;
+		}
+	}
+	return flag;
 }
