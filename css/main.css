@@ -125,7 +125,7 @@ body {
   padding: 15px;
   top: 21px;
   right: 0px;
-  width: 200px;
+  width: 250px;
   background-color: rgba(255,255,255,0.9);
   box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
   border-radius: 3px;
@@ -347,17 +347,20 @@ fieldset legend {
 }
 .results table {
   width: 100%;
+  font-size: 0.8rem;
 }
 .results table th, .results table td {
   padding: 5px 0;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
 }
 .results table th {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-align: left;
 }
 .results table td {
-  border-bottom: 1px dotted #ccc;
+  border-bottom: 1px dotted #ddd;
   text-align: left;
 }
 .results table td.text-right, .results table th.text-right {
@@ -393,4 +396,4 @@ fieldset legend {
 
 /* Fixes */
 .s2select { min-width: 190px; }
-
+.deleteConfig { padding: 2px 5px; cursor: pointer;}
