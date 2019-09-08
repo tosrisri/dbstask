@@ -21,7 +21,7 @@ $(document).ready(function() {
 		saveObj.desiredExchangeRate = $("#drate").val();
 		saveObj.userId = 123456,
 		//saveObj.travelDate = $("#travelDate").val();
-		var alertConfigs = [];
+		alertConfigs = [];
 		alertConfigs.push(saveObj);
 		var requestObj  = {};
 		requestObj["alertConfigs"] = alertConfigs;
