@@ -17,7 +17,6 @@ $(document).ready(function() {
 		buttonText: "Calendar"
 	});
 	getCountries();
-
 	$("#submit").on('click', function() {
 		if(validateForm()) {
 			var inputObj = {};

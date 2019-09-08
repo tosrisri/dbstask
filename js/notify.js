@@ -28,6 +28,8 @@ $(document).ready(function() {
 		saveAlertConfigurations(requestObj);
 	});
 	
+	getUserAlertConfigurations();
+	
 });
 function saveAlertConfigurations(saveObj) {
 	$.ajax({
@@ -36,7 +38,7 @@ function saveAlertConfigurations(saveObj) {
 		dataType : 'json',
 		contentType : 'application/json',
 		success : function(data) {
-			alert(data.message);
+			getUserAlertConfigurations();
 		},
 		data : JSON.stringify(saveObj)
 	});
@@ -63,14 +65,14 @@ function getUserNotifications() {
 	});
 }
 
-function deleteAlertConfiguration() {
+function deleteAlertConfiguration(id, thisObj) {
 	$.ajax({
-		url : notifcationUrl + "/api/v1/fxRateAlert/alertConfigs/17",
+		url : notifcationUrl + "/api/v1/fxRateAlert/alertConfigs/"+id,
 		type : 'get',
 		dataType : 'json',
 		contentType : 'application/json',
 		success : function(data) {
-			displayExchangeRates(data.message);
+			$(thisObj).parents("tr").remove();
 		}
 	});
 }
@@ -82,7 +84,25 @@ function getUserAlertConfigurations() {
 		dataType : 'json',
 		contentType : 'application/json',
 		success : function(data) {
-			displayExchangeRates(data.message);
+			displayAlertConfigurations(data.alertConfigs);
 		}
 	});
+}
+
+function displayAlertConfigurations(alertConfigs) {
+	$("#alertConfigBody").html("");
+	$.each(alertConfigs, function(i, config) {
+		var markup = "<tr><td>" + config.baseCurrencyCountry + "</td><td>" + config.exchangeCurrencyCountry + 
+		"<td class='text-center'>" + config.desiredExchangeRate + "</td><td class='text-center'>" + config.travelDate +"</td>" +
+			"<td class='text-center'><a title='Delete' class='deleteConfig' data-id="+config.id+"><img src='images/delete.svg' width='12' height='12'" +
+			"alt='=delete'/></a></td></tr>";
+		$("#alertConfigBody").append(markup);
+	});
+	
+	$('.deleteConfig').off('click');
+	$('.deleteConfig').on('click', function() {
+		var id = $(this).attr("data-id"); 
+		deleteAlertConfiguration(id, $(this));
+	});
+	
 }
