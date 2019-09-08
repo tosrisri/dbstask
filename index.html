@@ -88,7 +88,7 @@
                         <input id="reset" type="button" value="Reset" />
                     </div>
                 </form>
-                <div class="pre-cont">
+                <div class="pre-cont" id="predictedFx" style="display:none">
                     <h3>Predicted FX rates<span id="fromSpan"></span><span id="toSpan"></span></h3>
                     <ul class="predictions">
                         <!--  <li><span>5th Oct</span>72 USD</li>
@@ -110,7 +110,7 @@
                     <form class="form fxc-form" action="" method="post">
                         <fieldset>
                             <legend>Notify Setting</legend>
-                            <ul>
+                            <ul id="nSettings">
                                 <li><label for="scountry"><span>Source Country:</span></label>
                                     <input name="scountry" type="text" id="alertBaseCurrency" class="s2select"
                                         placeholder="eg.India" />
@@ -131,8 +131,8 @@
                         </fieldset>
                     </form>
                     <!-- results -->
-                    <h3>Results </h3>
                     <div class="results">
+                    	<h3 style="text-align: left;">Results </h3>
                         <table id="alertConfigTable" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
@@ -177,22 +177,23 @@
                                     <span class="error-msg">Country cannot be same</span></li>
                                 <li><input id="calculate" type="button" value="Calculate" /></li>
                             </ul>
-                            <div class="fxresult">
+                            <div class="fxresult" style="display: none">
                                 <p><span id='convertedFrom'>1 USD =</span></p>
                                 <p><span id='convertedTo'>INR</span></p>
                             </div>
                         </fieldset>
 
                     </form>
-
-                    <h3>FX rates for next 5 days</h3>
-                    <ul class="fxrates">
-                        <li><span>5th Oct</span>72 USD<span>1235345</span></li>
-                        <li><span>6th Oct</span>70 USD<span>1235345</span></li>
-                        <li><span>7th Oct</span>69 USD<span>1235345</span></li>
-                        <li><span>2019-10-08</span>68 USD<span>1235345</span></li>
-                        <li><span>2019-10-09</span>70 USD<span>1235345</span></li>
-                    </ul>
+					<div id="fxratesDiv" style="display: none">
+	                    <h3>FX rates for next 5 days</h3>
+	                    <ul class="fxrates">
+	                        <li><span>5th Oct</span>72 USD<span>1235345</span></li>
+	                        <li><span>6th Oct</span>70 USD<span>1235345</span></li>
+	                        <li><span>7th Oct</span>69 USD<span>1235345</span></li>
+	                        <li><span>2019-10-08</span>68 USD<span>1235345</span></li>
+	                        <li><span>2019-10-09</span>70 USD<span>1235345</span></li>
+	                    </ul>
+					</div>
 
 
                 </div>

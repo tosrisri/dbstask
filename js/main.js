@@ -2,6 +2,7 @@ var countries;
 var locationUrl = "http://192.168.43.53:8080";
 
 $(document).ready(function() {
+	$(".noti-show").hide();
 	$("#fromDate").datepicker({
 		minDate : new Date(),
 		maxDate : "+3m",
@@ -26,6 +27,7 @@ $(document).ready(function() {
 			inputObj.exchangeCurreny = $("#exchangeCurrency").val();
 			console.log(inputObj);
 			getExchangeRates(inputObj);
+			$('#predictedFx').show();
 		}
 	});
 	
@@ -57,8 +59,8 @@ $(document).ready(function() {
 		$('#exchangeCurrency').prev().removeClass("error-field");
 		$('#exchangeCurrency').parent().find(".error-msg").html(""); 
 	});
-	
 });
+
 
 function displayError($id, $parentId, msg) {
 	$id.addClass("error-field");
@@ -146,8 +148,9 @@ function displayExchangeRates(exchangeRates) {
 	$("#fromSpan").html("from "+$("#fromDate").val());
 	$("#toSpan").html(" to "+$("#toDate").val());
 	$(".predictions").html("");
+	var destCurrency = $("#exchangeCurrency").select2("data");
 	$.each(exchangeRates, function(i, rate) {
-		$(".predictions").append("<li><span>"+rate.date+"</span>"+rate.exchangeRate+" "+rate.exchangeCurreny+"</li>")
+		$(".predictions").append("<li><span>"+rate.date+"</span>"+rate.exchangeRate+" "+destCurrency.id+"</li>")
 	});	
 }
 

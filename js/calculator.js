@@ -66,14 +66,17 @@ function getCalculatorExchangeRates(inputObj) {
 function displayCalculatorRates(exchangeRates) {
 	var toRate = $('#trate').val();
 	$('.fxrates').html('');
+	destCurrency = $("#exchangeCurrency1").select2("data");
 	$.each(exchangeRates, function(i, rate) {
 		var finalRate = toRate*rate.exchangeRate;
 		finalRate = finalRate.toFixed(2);
 		if(i == 0) {
 			$('#convertedFrom').html(toRate+" "+rate.baseCurrency);
-			$('#convertedTo').html(finalRate+" "+rate.exchangeCurreny);
+			$('#convertedTo').html(finalRate+" "+destCurrency.id);
+			$(".fxresult").show();
 		} else if(i < 6 ){
-			$(".fxrates").append("<li><span>"+rate.date+"</span><span>"+rate.exchangeRate+" "+rate.exchangeCurreny+"</span><span>"+finalRate+"</span></li>")
+			$(".fxrates").append("<li><span>"+rate.date+"</span><span>"+rate.exchangeRate+" "+destCurrency.id+"</span><span>"+finalRate+"</span></li>")
+			$("#fxratesDiv").show();
 		} else {
 			return false;
 		}
@@ -82,8 +85,8 @@ function displayCalculatorRates(exchangeRates) {
 
 function displayError($id, $parentId, msg) {
 	$id.addClass("error-field");
-	$parentId.find(".error-msg").html(msg);
-	$parentId.find(".error-msg").css("display", "block");
+	//$parentId.find(".error-msg").html(msg);
+	//$parentId.find(".error-msg").css("display", "block");
 }
 
 function clearCalculatorFormError() {
@@ -101,7 +104,7 @@ function validateCalculatorForm() {
 	var flag = true;
 	clearCalculatorFormError();
 	if (trate.length < 1) {
-		displayError($('#drate'), $('#drate').parent(), "This field is required");
+		displayError($('#trate'), $('#trate').parent(), "This field is required");
 		flag = false;
 	}
 	if (baseCurrency.length < 1) {

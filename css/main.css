@@ -152,7 +152,7 @@ body {
    background-color: var(--white);
    padding: 15px;
    border-radius: 3px;
-   margin: 1rem 0;
+   margin-bottom: 1rem;
 }
 
 /* Form Styles */
@@ -193,7 +193,11 @@ fieldset {
   width: 51%;
 }
 fieldset legend {
-  padding: 0 10px 0 10px;
+      padding: 0 10px 0 10px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color:#888;
+    font-weight:bold;
 }
 .form-item {
   border: 0px solid blue;
@@ -352,12 +356,12 @@ fieldset legend {
 .results table th, .results table td {
   padding: 5px 0;
   border-collapse: collapse;
-  border: 1px solid #ddd;
 }
 .results table th {
   font-weight: bold;
   font-size: 0.9rem;
   text-align: left;
+  background-color:#f3f3f3
 }
 .results table td {
   border-bottom: 1px dotted #ddd;
@@ -397,3 +401,10 @@ fieldset legend {
 /* Fixes */
 .s2select { min-width: 190px; }
 .deleteConfig { padding: 2px 5px; cursor: pointer;}
+.fxrates li {
+	    /*background-color: #FAD961;
+    background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);*/
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    box-shadow: 3px 3px 3px #eee;
+}

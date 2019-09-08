@@ -31,7 +31,22 @@ $(document).ready(function() {
 		}
 	});
 	
+	$("#drate").on("focusin", function() {
+		$(this).removeClass("error-field");
+		$(this).next().html("");
+	});
+	$('#alertBaseCurrency').on("select2-open", function() { 
+		$('#alertBaseCurrency').prev().removeClass("error-field");
+		$('#alertBaseCurrency').parent().find(".error-msg").html(""); 
+	});
+	$('#alertDestCurrency').on("select2-open", function() { 
+		$('#alertDestCurrency').prev().removeClass("error-field");
+		$('#alertDestCurrency').parent().find(".error-msg").html(""); 
+	});
+	
 	getUserAlertConfigurations();
+	
+	setInterval(getUserNotifications, 30000);
 	
 });
 function saveAlertConfigurations(saveObj) {
@@ -68,6 +83,10 @@ function getUserNotifications() {
 	});
 }
 
+function displayNotifications() {
+	
+}
+
 function deleteAlertConfiguration(id, thisObj) {
 	$.ajax({
 		url : notifcationUrl + "/api/v1/fxRateAlert/alertConfigs/"+id,
@@ -94,26 +113,31 @@ function getUserAlertConfigurations() {
 
 function displayAlertConfigurations(alertConfigs) {
 	$("#alertConfigBody").html("");
-	$.each(alertConfigs, function(i, config) {
-		var markup = "<tr><td>" + config.baseCurrencyCountry + "</td><td>" + config.exchangeCurrencyCountry + 
-		"<td class='text-center'>" + config.desiredExchangeRate + "</td>" +
+	if(alertConfigs.length > 0) {
+		$.each(alertConfigs, function(i, config) {
+			var markup = "<tr><td>" + config.baseCurrencyCountry + "</td><td>" + config.exchangeCurrencyCountry + 
+			"<td class='text-center'>" + config.desiredExchangeRate + "</td>" +
 			"<td class='text-center'><a title='Delete' class='deleteConfig' data-id="+config.id+"><img src='images/delete.svg' width='12' height='12'" +
 			"alt='=delete'/></a></td></tr>";
-		$("#alertConfigBody").append(markup);
-	});
-	
-	$('.deleteConfig').off('click');
-	$('.deleteConfig').on('click', function() {
-		var id = $(this).attr("data-id"); 
-		deleteAlertConfiguration(id, $(this));
-	});
+			$("#alertConfigBody").append(markup);
+		});
+		
+		$('.deleteConfig').off('click');
+		$('.deleteConfig').on('click', function() {
+			var id = $(this).attr("data-id"); 
+			deleteAlertConfiguration(id, $(this));
+		});
+		$(".results").show();
+	} else {
+		$(".results").hide();
+	}
 	
 }
 
 function displayError($id, $parentId, msg) {
 	$id.addClass("error-field");
-	$parentId.find(".error-msg").html(msg);
-	$parentId.find(".error-msg").css("display", "block");
+	//$parentId.find(".error-msg").html(msg);
+	//$parentId.find(".error-msg").css("display", "block");
 }
 
 function validateAlertConfigForm() {
@@ -123,7 +147,7 @@ function validateAlertConfigForm() {
 	var flag = true;
 	clearNotificationForm();
 	if (trate.length < 1) {
-		displayError($('#trate'), $('#trate').parent(), "This field is required");
+		displayError($('#drate'), $('#drate').parent(), "This field is required");
 		flag = false;
 	}
 	if (baseCurrency.length < 1) {
